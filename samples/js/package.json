@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Sample application for headless Chromium",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start"
+    "test": "./node_modules/karma/bin/karma start",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Mark Adams <mark@markadams.me>",
   "license": "MIT",
@@ -12,11 +14,14 @@
     "url": "git@github.com:mark-adams/docker-chromium-xvfb.git"
   },
   "devDependencies": {
-    "karma": "^0.12.31",
+    "karma": "^5.0.8",
     "karma-chrome-launcher": "^0.1.7",
     "karma-junit-reporter": "^0.2.2",
     "karma-qunit": "^0.1.4",
     "qunitjs": "^1.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
